@@ -6,7 +6,7 @@ import { toast } from 'react-hot-toast'
 import {redirect, useRouter} from "next/navigation"
 import { Context } from '../components/Clients'
 
-export default function todoForm() {
+export default function TodoForm() {
     const [title,setTitle] = useState("")
     const [description,setDescription] = useState("")
     const {user} = useContext(Context)

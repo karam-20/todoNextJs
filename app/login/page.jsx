@@ -6,13 +6,10 @@ import { Context } from '../../components/Clients';
 import { redirect } from 'next/navigation';
 import { toast } from 'react-hot-toast';
 
-export const metadata = {
-    title: 'Login',
-    description: 'Login to use our app',
-  }
 
 
-export default function page() {
+
+export default function Page() {
 
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -35,6 +32,7 @@ export default function page() {
                 toast.success(data.message)
             
         } catch (error) {
+            return toast.error(data.message)
             
         }
     }
