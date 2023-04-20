@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 
 const fetchTodo = async(token)=>{
     try {
-      const res = await fetch(`${process.env.URL}/api/mytask`,
+      const res = await fetch(`${process.env.FRONTEND_URL}/api/mytask`,
       {
         cache:"no-cache",
         headers:{
@@ -12,7 +12,7 @@ const fetchTodo = async(token)=>{
         }
       })
       const data = await res.json();
-    
+      console.log(data.todos)
       if(!data.success) return []
       return data.todos;
     } catch (error) {
